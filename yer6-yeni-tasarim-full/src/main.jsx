@@ -48,7 +48,7 @@ function HomePage({setPage,openLogin}) {
    <div className="heroText"><span>YER6 ROLEPLAY</span><h1>Bir Şehrin<br/><em>Yeni Hikayesi Başlıyor!</em></h1><p>Gerçekçi rol ortamı, aktif sistemler ve profesyonel yönetim kadrosuyla benzersiz bir deneyime katıl.</p><div className="heroButtons"><Button onClick={()=>openLogin('register')}><UserPlus size={18}/> Hemen Katıl</Button><Button variant="ghost" onClick={()=>window.open('https://discord.gg/ysewESgQm','_blank')}>Discord'da Katıl</Button></div></div>
    <Card className="status"><div><b>Sunucu Durumu</b><span>Çevrimiçi</span></div><p>IP Adresi <b>connect.yer6rp.com</b></p><p>Oyuncular <b>182 / 500</b></p><p>Ping <b>21ms</b></p><Button className="full" onClick={()=>window.location.href='fivem://connect/185.34.101.48:30120'}>Sunucuya Katıl</Button></Card>
   </section>
-  <section className="galleryRow">{gallery.map((g,i)=><Card className="photoCard" key={i}><img src={`/images/${g}`}/><h2>{['Şehirden Kareler','Devlet Birimleri','Sokak Hayatı'][i]}</h2></Card>)}</section>
+  <section className="galleryRow">{gallery.map((g,i)=><Card className="photoCard" key={i}><img src={`/images/${g}`}/><h2>{['Şehirden Kareler','Sokak Hayatı','Devlet Birimleri'][i]}</h2></Card>)}</section>
   <Footer setPage={setPage} openLogin={openLogin}/>
  </div>
 }
@@ -62,7 +62,7 @@ function RulesPage({setPage,openLogin}) {
  return <div className="inner"><Header setPage={setPage} openLogin={openLogin}/><main><Title k="YÖNETMELİK" t="Kurallar" p="Yeralti Roleplay full ceza listesi."/><div className="filters"><div className="search"><Search size={18}/><input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Ceza ara..."/></div><select className="field" value={cat} onChange={e=>setCat(e.target.value)}>{cats.map(c=><option key={c}>{c}</option>)}</select></div><Card className="ruleList">{filtered.map(r=><div className="rule" key={r.id}><span>{r.id}</span><b>{r.name}</b><em>{r.category}</em><Badge tone={r.level==='Perma'?'bad':r.level==='Not'?'note':'warn'}>{r.penalty}</Badge></div>)}</Card></main></div>
 }
 
-function StaffPage({setPage,openLogin,staffRanks}) { return <div className="inner"><Header setPage={setPage} openLogin={openLogin}/><main><Title k="YÖNETİM" t="Yönetim Kadrosu" p="Yetkili seviyeleri ve rütbe sistemi."/><div className="rankGrid">{staffRanks.map(r=><Card className="rankCard" key={r.level}><b>LVL {r.level}</b><h2>{r.rank}</h2><p>{r.level>=17?'Kurucu Ekibi':r.level>=11?'Admin Ekibi':'Staff Ekibi'}</p></Card>)}</div></main></div> }
+function StaffPage({setPage,openLogin,staffRanks}) { return <div className="inner"><Header setPage={setPage} openLogin={openLogin}/><main><Title k="" t="" p="Yetkili seviyeleri ve rütbe sistemi."/><div className="rankGrid">{staffRanks.map(r=><Card className="rankCard" key={r.}><b> {r.}</b><h2>{r.}</h2><p>{r.>=17?'':r.>=?'':''}</p></Card>)}</div></main></div> }
 
 function CharactersPage({setPage,openLogin}) {
  const [chars,setChars]=useState(()=>JSON.parse(localStorage.getItem('yer6_chars')||'[]')); const [f,setF]=useState({name:'',owner:'',story:''});
